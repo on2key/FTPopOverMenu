@@ -539,7 +539,7 @@ typedef NS_ENUM(NSUInteger, FTPopOverMenuArrowDirection) {
     
     if (menu.popMenuView.menuStringArray.count >= (index + 1)) {
         FTPopOverMenuCell *cell = [menu.popMenuView.menuTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-        [cell setupWithMenuName:text menuImage:imageName];
+        [cell setupWithMenuName:text menuImage:imageName selected:NO];
     }
 }
 + (void) showForSender:(UIView *)sender
