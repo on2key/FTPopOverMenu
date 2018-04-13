@@ -79,6 +79,8 @@ typedef void (^FTPopOverMenuDismissBlock)(void);
  */
 @interface FTPopOverMenu : NSObject
 
+ /**自己添加，修改某一行的数据*/
++ (void)chageIndexCellWithText:(NSString *)text imageName:(NSString *)imageName byIndex:(NSInteger)index;
 
 /**
  show method with sender without images
