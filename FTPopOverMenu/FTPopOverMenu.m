@@ -532,7 +532,16 @@ typedef NS_ENUM(NSUInteger, FTPopOverMenuArrowDirection) {
 }
 
 #pragma mark - Public Method
-
+/**自己添加，修改某一行的数据*/
++ (void)chageIndexCellWithText:(NSString *)text imageName:(NSString *)imageName byIndex:(NSInteger)index{
+    
+    FTPopOverMenu *menu = [self sharedInstance];
+    
+    if (menu.popMenuView.menuStringArray.count >= (index + 1)) {
+        FTPopOverMenuCell *cell = [menu.popMenuView.menuTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+        [cell setupWithMenuName:text menuImage:imageName];
+    }
+}
 + (void) showForSender:(UIView *)sender
          withMenuArray:(NSArray *)menuArray
              doneBlock:(FTPopOverMenuDoneBlock)doneBlock
